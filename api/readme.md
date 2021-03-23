@@ -1,2 +1,2 @@
-## API for DCR
-Using fastapi for quick production and quick services.
+# The API
+This API provides endpoints that return RGB values of the dominant colours of an image.

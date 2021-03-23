@@ -4,14 +4,7 @@ from pydantic import BaseModel
 # @ the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()
 
-db = [
-    {"1" : "A675A1"},  
-    {"2" : "8F3985"},
-    {"3" : "25283D"}, 
-    {"4" : "CEA2AC"},
-    {"5" : "EFD9CE"}, 
-]
-
+db = "db.json"
 
 class Color(BaseModel):
     id: int

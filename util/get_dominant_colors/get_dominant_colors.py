@@ -30,9 +30,8 @@ IMG = cv2.cvtColor(IMG, cv2.COLOR_BGR2RGB)
 
 
 # Path variables
-COLOR_LABELS_PATH = './data/csv/colors.csv'
-IMG_PATH = './data/images/image.jpeg'
-
+COLOR_LABELS_PATH = "./data/csv/colors.csv"
+IMG_PATH = "./data/images/image.jpeg"
 
 #__________________________________________________________________________
 

@@ -1,3 +1,9 @@
+"""
+This file processes the data from the dashboard-pio.herokuapp api to a more usable data structure.
+One time usage suffices. 
+It creates a new .json file with the data from the dashboard-pio.herokuapp api.
+"""
+
 import requests
 import json 
 
@@ -20,9 +26,10 @@ for i in range(0, data_length):
     db[company_name] = data[i]
     db[company_name].pop('name', None)
     
+for i in range(0, data_length):
+    print(data[i]["logo"])
 
-for key, value in db.items():
-    print("Key: {}\nValue: {}\n\n".format(key, value))
 
-with open('result.json', 'w') as fp:
-    json.dump(db, fp)
+# Saves the company_data json to a db.json file 
+# with open('db.json', 'w') as fp:
+#     json.dump(db, fp)
