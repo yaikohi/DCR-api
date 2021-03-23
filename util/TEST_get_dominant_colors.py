@@ -48,7 +48,7 @@ def get_dominant_color(company_data_json, company_name) -> list:
     CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
 
     for i in range(0, N_CLUSTERS):
-        RGB = (r, g, b) = (round(CLUSTER_CENTERS[i][0]), round(CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
+        RGB = (round(CLUSTER_CENTERS[i][0]), round(CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
 
         return (rgb_to_hex(RGB))
 
