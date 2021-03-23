@@ -38,7 +38,7 @@ IMG = cv2.cvtColor(IMG, cv2.COLOR_BGR2RGB)
 # Path variables
 COLOR_LABELS_PATH = "./data/csv/colors.csv"
 # moved from "../preprocessing/readability"
-IMG_DB = "./db_full_logo_urls.json"
+IMG_DB = ".../testdata/json/db_full_logo_urls.json"
 
 #__________________________________________________________________________
 
