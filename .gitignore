@@ -1,2 +1,5 @@
 venv
 .git
+
+# testing
+preprocessing/testing/readability/

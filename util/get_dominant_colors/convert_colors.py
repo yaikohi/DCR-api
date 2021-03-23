@@ -1,1 +1,0 @@
-# https://stackoverflow.com/questions/19914509/python-pil-pixel-rgb-color-to-hex

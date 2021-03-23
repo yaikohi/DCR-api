@@ -1,6 +1,7 @@
 # Color palette extraction tutorial: https://towardsdatascience.com/color-palette-extraction-with-k-means-clustering-machine-learning-from-scratch-part-iv-55e807407e53
 # Means Color Clustering tutorial: https://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/#:~:text=K%2Dmeans%20is%20a%20clustering,cluster%20with%20the%20nearest%20mean.&text=Pixels%20that%20belong%20to%20a,belonging%20to%20a%20separate%20cluster.
 
+# EXTERNAL LIBRARY IMPORTS
 from matplotlib import pyplot as plt
 
 # from scipy.cluster.vq import kmeans, vq
@@ -13,6 +14,10 @@ import cv2
 
 
 from utils import centroid_histogram, plot_colors
+
+# VARIABLE IMPORTS
+from preprocessing.data_processing import *
+
 #__________________________________________________________________________
 
 # Argument parser
@@ -26,12 +31,14 @@ IMG = cv2.cvtColor(IMG, cv2.COLOR_BGR2RGB)
 
 
 #__________________________________________________________________________
-
+# TODO: Write functions for the processing methods
+# TODO: Write the code to take in an URL instead of a filelocation
 
 
 # Path variables
 COLOR_LABELS_PATH = "./data/csv/colors.csv"
-IMG_PATH = "./data/images/image.jpeg"
+# moved from "../preprocessing/readability"
+IMG_DB = "./db_full_logo_urls.json"
 
 #__________________________________________________________________________
 
