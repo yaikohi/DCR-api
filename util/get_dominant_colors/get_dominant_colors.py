@@ -11,12 +11,11 @@ import numpy as np
 import pandas as pd
 import argparse
 import cv2
-
+import json
 
 from utils import centroid_histogram, plot_colors
+import os
 
-# VARIABLE IMPORTS
-from preprocessing.data_processing import *
 
 #__________________________________________________________________________
 
@@ -37,16 +36,14 @@ IMG = cv2.cvtColor(IMG, cv2.COLOR_BGR2RGB)
 
 # Path variables
 COLOR_LABELS_PATH = "./data/csv/colors.csv"
-# moved from "../preprocessing/readability"
-IMG_DB = ".../testdata/json/db_full_logo_urls.json"
+
+CURRENT_DIR = os.getcwd()
 
 #__________________________________________________________________________
 
 
 
 # Data
-
-## Loading the image
 
 IMG = cv2.imread(args["image"])             # Loads the image (BGR) with dtype = numpy.ndarray
 IMG = cv2.cvtColor(IMG, cv2.COLOR_BGR2RGB)  # Converting the image colours from BGR to RGB
