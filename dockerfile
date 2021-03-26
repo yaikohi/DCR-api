@@ -1,11 +1,14 @@
 FROM python3.9-slim-buster
 
-WORKDIR /DCR-API-PY
+WORKDIR /app
+ADD . /app
+
+ENV ACCEPT_EULA=Y
 
 COPY requirements.txt requirements.txt
+
+RUN apt-get --assume-yes update
 
 RUN pip3 install -r requirements.txt
 
 COPY . .
-
-CMD ["cd /api", "hypercorn", "main:app", "--reload"]
