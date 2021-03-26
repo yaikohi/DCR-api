@@ -7,6 +7,9 @@ import requests
 from PIL import Image
 import io
 
+# TODO: Split the code into respective functions.
+
+# IDEA: Create a class?
 
 DB = "../data/db_full_logo_urls.json"
 data = json.load(open(DB))
