@@ -1,16 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from pydantic.types import Json
 
 # @ the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()
 
-db = "db.json"
-
-class Color(BaseModel):
-    id: int
-    company_name: str
-    rgb_values: str
-    rgb_hex_value: str
+db = open("../data/db_full_logo_urls.json")
 
 
 @app.get("/")
