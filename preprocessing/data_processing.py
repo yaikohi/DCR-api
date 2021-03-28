@@ -17,7 +17,7 @@ data_length = len(data)
 company_names = []
 
 # Original code is commented out below
-def create_json_from_api(API_URL: str, FILENAME: str) -> json:
+def create_json_from_api(API_URL: str, FILENAME: str, DIR: str) -> json:
     request = requests.get(API_URL).json()
     data = request['response']
     data_length = len(data)
