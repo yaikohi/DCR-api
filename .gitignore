@@ -1,5 +1,11 @@
+# python
 venv
+
+# git
 .git
+
+# docker
+.devcontainer
 
 # testing
 preprocessing/testing/readability/
