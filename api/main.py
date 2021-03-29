@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from pydantic.types import Json
 
+from core.schemas import *
+
 # @ the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()
 
@@ -20,7 +22,8 @@ async def get_colors():
 async def read_color(color_id):
     return {"color_id" : color_id}
 
+# ! Doesn't work; can't find "Color" (it's in /core/schemas/schema.py)
 @app.post("/colors")
-async def add_color(color: Color):
+async def add_color(color: schema.Color):
     db.append(color.dict())
     return db[-1]
