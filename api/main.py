@@ -5,7 +5,7 @@ import json
 
 from core.schemas.schema import Colors
 
-# @ the api dir, use 'hypercorn main:app --reload'
+# Inside the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()                                                                                                                                                                                                                                                             
 
 db = "../data/company_db.json"
