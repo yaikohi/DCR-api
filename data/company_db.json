@@ -1,0 +1,277 @@
+{
+  "Fynch": {
+    "id": "47602c23-a1a2-4f40-9405-88e033d5cf24",
+    "website": "https://fynchmobility.com/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Fynch.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      {
+        "name": "Serge van den Berg",
+        "email": "serge.vandenberg@fynchmobility.com"
+      },
+      { "name": "Nina Driel", "email": "nina.driel@fynchmobility.com" }
+    ]
+  },
+  "Centric": {
+    "id": "644c2c43-26aa-4e7c-a73f-8181e743e9b8",
+    "website": "https://www.centric.eu/nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Centric.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Martin Kuil", "email": "Martin.Kuil@centric.eu" },
+      { "name": "Steffie Rijnbeek", "email": "steffie.rijnbeek@centric.eu" },
+      { "name": "Henk Morgenstond", "email": "henk.morgenstond@centric.eu" }
+    ]
+  },
+  "Inergy": {
+    "id": "6b256922-0588-4600-91b5-03bd13f4ac3b",
+    "website": "https://inergy.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Inergy.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Maik Groenewegen", "email": "maik.groenewegen@inergy.nl" },
+      { "name": "Joost Henskens", "email": "joost.henskens@inergy.nl" }
+    ]
+  },
+  "Quintor": {
+    "id": "2525d431-8425-41c8-9589-82eb4652f67a",
+    "website": "https://quintor.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Quintor.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Arjen Wassink", "email": "awassink@quintor.nl" },
+      { "name": "Bram K\u00f6hler", "email": "bkohler@quintor.nl" }
+    ]
+  },
+  "Musketeers.group": {
+    "id": "f8db062a-5c5d-400a-b735-c5f854723e61",
+    "website": "https://musketeers.group/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/musketeers.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      {
+        "name": "Erik Zevenbergen",
+        "email": "erik.zevenbergen@musketeers.group"
+      },
+      { "name": "Tom Breuker", "email": "tom.breuker@musketeers.group" }
+    ]
+  },
+  "Terberg Group": {
+    "id": "5e359018-e95d-44f7-b86a-1d734d093723",
+    "website": "https://www.royalterberggroup.com/nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Terberg.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Marco de Hair", "email": "mdehair@terberg.nl" },
+      { "name": "Rene Warries", "email": "rwarries@terbergbenschop.nl" },
+      { "name": "Ton Zwartjes", "email": "tzwartjens@terberg.nl" }
+    ]
+  },
+  "Pegasystems": {
+    "id": "29412ee3-5ac6-401d-a814-fc5bbae19e84",
+    "website": "https://www.pega.com/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Pega.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      {
+        "name": "Jennifer van den Berg",
+        "email": "Jennifer.vandenberg@pega.com"
+      }
+    ]
+  },
+  "Info Support International Group B.V.": {
+    "id": "3d0a3ebc-257a-44db-bae7-f13fb3f2aa9a",
+    "website": "https://internationalgroup.infosupport.com/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/infosupport.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Hanjo de Wit", "email": "Hanjo.deWit@infosupport.com" },
+      { "name": "Sigrid van Tuil", "email": "Sigrid.vanTuil@infosupport.com" },
+      {
+        "name": "Jeroen Uittenbosch",
+        "email": "Jeroen.Uittenbosch@infosupport.com"
+      },
+      { "name": "Recruitment", "email": "Recruitment@infosupport.com" }
+    ]
+  },
+  "Shopping Minds": {
+    "id": "7fdb21a6-2e25-4fe4-8408-1fdf37dc71c3",
+    "website": "https://shoppingminds.com/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/shoppingminds.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Christian Vriens", "email": "christian@shoppingminds.com" }
+    ]
+  },
+  "Vodafone Ziggo": {
+    "id": "a7030e61-d4c8-45f7-b7d4-2037bcb70434",
+    "website": "https://www.vodafoneziggo.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/VodafoneZiggo.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      {
+        "name": "Jan van Boesschotenen",
+        "email": "jan.vanboesschoten@vodafoneziggo.com"
+      },
+      { "name": "Aziz Mohammadi", "email": "aziz.mohammadi@vodafoneziggo.com" }
+    ]
+  },
+  "Capgemini Nederland BV": {
+    "id": "5f96094b-d255-4d4e-aeca-1645e6412af2",
+    "website": "https://www.capgemini.com/nl-nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Capgemini.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Peter Paul Tonen", "email": "peterpaul.tonen@capgemini.com" },
+      {
+        "name": "Koen van den Dungen",
+        "email": "koen.vanden.dungen@capgemini.com"
+      }
+    ]
+  },
+  "Alstom Transport BV": {
+    "id": "15cf21a8-e303-4937-a387-2d00d0c430a9",
+    "website": "https://www.alstom.com/nl/alstom-nederland",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Alstom.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Chiel Bijpost", "email": "chiel.bijpost@alstomgroup.com" },
+      { "name": "Richard Mooij", "email": "richard.mooij@alstomgroup.com" },
+      { "name": "Erik Sonneveld", "email": "erik.sonneveld@alstomgroup.com" }
+    ]
+  },
+  "AFAS Software": {
+    "id": "eea433af-2d82-4318-b1ea-4c80c68a9da5",
+    "website": "https://www.afas.be/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Afas.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Dennis van Velzen", "email": "dennis.vanvelzen@afas.nl" },
+      { "name": "Martijn Delahaye", "email": "martijn.delahaye@afas.nl" }
+    ]
+  },
+  "Sogeti Nederland B.V.": {
+    "id": "51e4440a-3560-4c7d-9bee-113e0876a370",
+    "website": "https://www.sogeti.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Sogeti.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Chiel Kronenburg", "email": "chiel.kronenburg@sogeti.com" },
+      { "name": "Wouter Smit", "email": "wouter.smit@sogeti.com" },
+      { "name": "Mathijs de With", "email": "mathijs.de.with@sogeti.com" }
+    ]
+  },
+  "Rabobank": {
+    "id": "b0e50c79-9b82-4da5-9b01-02ecf700d269",
+    "website": "https://www.rabobank.nl",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Rabobank.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Magalie Carluccia", "email": "Magalie.Carlucci@rabobank.nl" },
+      { "name": "Ujjvala Britto", "email": "Ujjvala.Britto@rabobank.nl" }
+    ]
+  },
+  "Hydrologic": {
+    "id": "6e5bfcda-a548-4496-9eae-e340df2bc215",
+    "website": "https://www.hydrologic.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/HydroLogic.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      {
+        "name": "Arnold Lobbrecht",
+        "email": "Arnold.Lobbrecht@hydrologic.com"
+      },
+      {
+        "name": "Marieke van Slooten",
+        "email": "marieke.vanslooten@hydrologic.com"
+      }
+    ]
+  },
+  "Proact": {
+    "id": "343e0eb0-68c1-4adb-a8c7-80d3ee696dbd",
+    "website": "https://www.proact.eu/?lang=nl",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Proact.jpg",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Marc van der Gaag", "email": "Marc.van.der.Gaag@proact.nl" }
+    ]
+  },
+  "Axians": {
+    "id": "0e07a354-605e-4d36-af5f-d3ae94405d3b",
+    "website": "https://www.axians.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Axians.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Joeska Prevosth", "email": "joeska.prevosth@axians.com" }
+    ]
+  },
+  "Yellax": {
+    "id": "0f504e8d-ea94-41b5-827c-f0c8c917491c",
+    "website": "https://www.yellax.com/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Yellax.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Herbert van Donselaar", "email": "h.vandonselaar@yellax.com" }
+    ]
+  },
+  "CIM Solutions": {
+    "id": "d4943701-43d3-435c-be8a-55aaeec3e364",
+    "website": "https://www.cimsolutions.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Cimsolutions.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Feike Sinnema", "email": "f.sinnema@cimsolutions.nl" }
+    ]
+  },
+  "Finaps B.V.": {
+    "id": "cb8ab8b1-019c-4909-afa5-27c5b6e8656a",
+    "website": "https://finaps.nl/",
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/finaps.png",
+      "colors": { "primary": "red", "secondary": "blue", "tertiary": "white" }
+    },
+    "contacts": [
+      { "name": "Lonneke Makhija", "email": "lonneke.makhija@finaps.nl" }
+    ]
+  }
+}

@@ -8,25 +8,42 @@ from core.schemas.schema import Colors
 # @ the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()                                                                                                                                                                                                                                                             
 
-db = "../data/db_full_logo_urls.json"
+db = "../data/company_db.json"
 db = json.load(open(db))
-# {"Fynch", {"blue", "red", "white"}}
 
+
+# Returns the complete database
 @app.get("/")
 async def index():
-    return {"key": "value"}
-
-@app.get("/colors")
-async def get_colors():
     return db
+
+
+# Returns the attributes of a company specified in the URL
+@app.get("/logos/{company_name}")
+async def get_colors(company_name: "str"):
+    for company in db:
+        return db[company_name]
+
+
+# TODO: Create a PATCH request for updating the colors.
+# @app.post("/logos/{company_name}")
+# async def update_logo_colors(color: Colors):
+#     return color
+
+# @app.patch("/logos/{company_name}")
+# async def update_logo_colors(color: Colors):
+#     db[company_name]['logo']['color'] = color
+
+
 
 @app.get("/colors/{color_id}")
 async def read_color(color_id):
     return {"color_id" : color_id}
 
+
 # ! Doesn't work; can't find "Color" (it's in /core/schemas/schema.py)
-@app.post("/colors/{color_id}")
-async def add_color(color: Colors):
-    """Adds three colors to an id"""
-    db.append(color.dict())
-    return db[-1]
+# @app.post("/logos/{company_name}")
+# async def add_color(color: Colors):
+#     """Adds three colors to an id"""
+#     db.append(color.dict())
+#     return db[-1]

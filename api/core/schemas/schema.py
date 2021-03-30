@@ -3,9 +3,9 @@ from pydantic.types import Json
 
 
 class Colors(BaseModel):
-    primary_color: str
-    secondary_color: str
-    tertiary_color: str
+    primary: str
+    secondary: str
+    tertiary: str
 
 
 # class CompanyLogo(BaseModel):
