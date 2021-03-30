@@ -35,10 +35,10 @@ async def get_colors(company_name: "str"):
 #     db[company_name]['logo']['color'] = color
 
 
-
-@app.get("/colors/{color_id}")
-async def read_color(color_id):
-    return {"color_id" : color_id}
+# ! Old, can probably be removed
+# @app.get("/colors/{color_id}")
+# async def read_color(color_id):
+#     return {"color_id" : color_id}
 
 
 # ! Doesn't work; can't find "Color" (it's in /core/schemas/schema.py)
