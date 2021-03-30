@@ -8,6 +8,6 @@ class Colors(BaseModel):
     tertiary_color: str
 
 
-class CompanyLogo(BaseModel):
-    company_name: str
-    colors: Colors
+# class CompanyLogo(BaseModel):
+#     company_name: str
+#     colors: Colors
