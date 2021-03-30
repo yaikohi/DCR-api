@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from pydantic.types import Json
 import json
 
-from core.schemas.schema import Colors
+from core.schemas.schema import Colo                                                                                            rs
 
 # Inside the api dir, use 'hypercorn main:app --reload'
 app = FastAPI()                                                                                                                                                                                                                                                             
