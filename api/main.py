@@ -29,7 +29,7 @@ async def get_colors(company_name: "str"):
 # @app.post("/logos/{company_name}")
 # async def update_logo_colors(color: Colors):
 #     return color
-
+ 
 # @app.patch("/logos/{company_name}")
 # async def update_logo_colors(color: Colors):
 #     db[company_name]['logo']['color'] = color
