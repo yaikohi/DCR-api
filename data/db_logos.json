@@ -1,0 +1,212 @@
+{
+  "Fynch": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Fynch.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030204",
+        "tertiary": "cda872"
+      }
+    }
+  },
+  "Centric": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Centric.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Inergy": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Inergy.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Quintor": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Quintor.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Musketeers.group": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/musketeers.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Terberg Group": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Terberg.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Pegasystems": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Pega.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "020103",
+        "tertiary": "998e7e"
+      }
+    }
+  },
+  "Info Support International Group B.V.": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/infosupport.jpg",
+      "colors": {
+        "primary": "a9aea0",
+        "secondary": "ffffff",
+        "tertiary": "030103"
+      }
+    }
+  },
+  "Shopping Minds": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/shoppingminds.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Vodafone Ziggo": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/VodafoneZiggo.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030204",
+        "tertiary": "cda872"
+      }
+    }
+  },
+  "Capgemini Nederland BV": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Capgemini.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Alstom Transport BV": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Alstom.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "ada691"
+      }
+    }
+  },
+  "AFAS Software": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Afas.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Sogeti Nederland B.V.": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Sogeti.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030204",
+        "tertiary": "cda872"
+      }
+    }
+  },
+  "Rabobank": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Rabobank.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Hydrologic": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/HydroLogic.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030204",
+        "tertiary": "cda872"
+      }
+    }
+  },
+  "Proact": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Proact.jpg",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Axians": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Axians.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "ada691"
+      }
+    }
+  },
+  "Yellax": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Yellax.png",
+      "colors": {
+        "primary": "cda872",
+        "secondary": "030204",
+        "tertiary": "ffffff"
+      }
+    }
+  },
+  "CIM Solutions": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/Cimsolutions.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  },
+  "Finaps B.V.": {
+    "logo": {
+      "url": "https://dashboard-pio.herokuapp.com/companyLogos/finaps.png",
+      "colors": {
+        "primary": "ffffff",
+        "secondary": "030103",
+        "tertiary": "a9aea0"
+      }
+    }
+  }
+}
