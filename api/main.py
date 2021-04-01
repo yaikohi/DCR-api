@@ -7,7 +7,7 @@ from util.dcr import get_dominant_color
 
 
 # TODO: Create a PATCH request for updating the colors.
-# TODO: Expand the documentation and for the api.
+# TODO: Possibly expand the documentation and for the api. -> research api standards beforehand.
 
 # Extra description for the api/docs.
 tags_metadata = [
