@@ -53,7 +53,7 @@ def get_dominant_color(url: str) -> list:
     IMG_CLUSTER = KMeans(n_clusters = N_CLUSTERS).fit(IMAGE)
 
     # TODO: Sort the cluster centers.
-    # !: Clusters aren't sorted = colors aren't sorted.
+    # !: Clusters aren't sorted (=> colors aren't sorted.)
     # Contains the dominant colors of the image
     CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
 
