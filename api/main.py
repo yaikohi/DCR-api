@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import json
 import requests 
 
-from util.dcr import get_dominant_color
+from dcr import get_dominant_color
 
 
 # Extra description for the api/docs.
@@ -41,6 +41,19 @@ async def get_logo_colors(company_name: str) -> dict:
 
 
 # Returns the list of colors when the request body contains an url to the company logo.
-@app.post("/", tags=["Logos"])
-async def return_logo_colors(url: str) -> list:
-    return get_dominant_color(url)
+@app.get("/logos/{company_name}", tags=["Logos"])
+async def return_logo_colors(company_name: str) -> list:
+    
+    data = requests.get("https://dashboard-pio.herokuapp.com/companies").json()['response']
+    
+    url_first_half = "https://dashboard-pio.herokuapp.com"
+    
+    for i in range(len(data)):
+        if company_name == data[i]['name']:
+            url_second_half = data[i]['logo']
+            url = str(url_first_half + url_second_half)
+            return get_dominant_color(url)
+        else: 
+            # ! Not safe. 
+            # TODO: Add error handler.
+            continue
