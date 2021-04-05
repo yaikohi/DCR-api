@@ -22,7 +22,7 @@ app = FastAPI(
     openapi_tags=tags_metadata
 )
 
-
+# TODO: Stop using a local database. It was for testing only.
 # Loading the company logo database from local storage
 db = "../data/db_logos.json"
 db = json.load(open(db))
