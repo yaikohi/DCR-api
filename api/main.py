@@ -69,6 +69,7 @@ async def get_logo_colors(company_name: str) -> dict:
             return data[i]
 
 
+# TODO: Add a spelling check algorithm for the company names so that it corrects typos to the corresponding company name. This will make it more user-friendly.
 # Returns the list of colors when the request body contains an url to the company logo.
 @app.get("/{company_name}/colors", tags=["Logos"])
 async def return_logo_colors(company_name: str) -> list:    
