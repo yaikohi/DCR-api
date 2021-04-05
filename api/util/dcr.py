@@ -66,5 +66,3 @@ def get_dominant_color(url: str) -> list:
         rgb_hex_values.append((rgb_to_hex(RGB)))
     
     return rgb_hex_values
-
-# print(get_dominant_color("https://dashboard-pio.herokuapp.com/companyLogos/Fynch"))
