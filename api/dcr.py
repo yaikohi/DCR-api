@@ -5,6 +5,23 @@ from PIL import Image
 import io
 
 
+# Comments @ get_dominant_colors-----------------------------
+# ! Function doesn't filter out the white background-color that most logos have.
+# TODO: Filter out the white color values before applying clustering.
+# ? Write a new function to filter out the white background color?
+
+# ! The amount of colors to be returned is currently set to 3.
+# TODO: Research how much colors the logo's have on average.
+# TODO: Discuss with front-end developers how many colors they would like to be able to extract.
+# ? Add N_CLUSTERS params to this function?
+
+# !: Assertion check doesn't seem to work. " AssertionError "
+# TODO: Fix the assertion check.
+
+# !: Clusters aren't sorted (=> colors aren't sorted.)
+# TODO: Sort the cluster centers before returning the list.
+# -----------------------------------------------------------
+
 def fetch_and_save_image(url: str) -> np.asarray:
     """
     Fetches the image from the url
@@ -30,31 +47,21 @@ def rgb_to_hex(rgb: tuple) -> str:
 
     return '%02x%02x%02x' % rgb
 
-# ! get_dominant_color() doesn't filter out the white background-color of most logos.
-# TODO: Filter out the white color values before applying clustering.
-# ? Write a new function to filter out the white background color?
+
 def get_dominant_color(url: str) -> list:
     """
     Accepts an url (str) to an image.
     Retrieves the dominant colors through clustering.
     Returns the amount N_CLUSTERS colors within an array.
     """
-
-    # TODO: Research how much colors the logo's have on average.
-    # TODO: Discuss with front-end developers how many colors they would like to be able to extract.
-    # ? Add N_CLUSTERS params to this function?
-    # ! The amount of colors to be returned is currently set to 3.
     N_CLUSTERS = 3
 
     # Fetches image from url and saves it as a cv2 image object
     IMAGE = fetch_and_save_image(url)
-
     height, width, channels = IMAGE.shape
 
-    # TODO: Fix the assertion check.
-    # !: Assertion check doesn't seem to work. " AssertionError "
-    # Checks if the image has color values
-    # assert channels == 3
+    # // Checks if the image has color values
+    # // assert channels == 3
 
     # Reshaping the image array for the KMeans algorithm
     IMAGE = IMAGE.reshape((height * width), channels)
@@ -62,8 +69,6 @@ def get_dominant_color(url: str) -> list:
     # Clustering the image
     IMG_CLUSTER = KMeans(n_clusters = N_CLUSTERS).fit(IMAGE)
 
-    # TODO: Sort the cluster centers.
-    # !: Clusters aren't sorted (=> colors aren't sorted.)
     # Contains the dominant colors of the image
     CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
 
