@@ -18,7 +18,8 @@ in the terminal to start the local server and inspect the API.
 
 Go to http://127.0.0.1:8000/docs to inspect the swagger docs of this api. Here you can try out the different endpoints the API provides.
 
-Example: 
+Example:
+ 
 ![Example](https://github.com/yaikohi/DCR-api/tree/Development/api/readme-images/howto1.gif)
 
 
