@@ -27,7 +27,6 @@ app = FastAPI(
 )
 
 
-# ! LOADING DATA FROM THE DATABASE
 # Fetches the data from the database and constructs a local memory cache for queries.
 # TODO: Double check the variable names for readability.
 # TODO: Possible restrucuring of code.
@@ -61,7 +60,6 @@ logos_dict = dict(zip(list_of_companies, list_of_logo_urls))
 
 
 
-# ! API ROUTES
 # Returns the full database.
 @app.get("/", tags=["Companies"])
 async def get_logos():
@@ -82,6 +80,7 @@ async def get_logo_colors(company_name: str) -> dict:
             return db[i]
 
 
+# ? Add an endpoint to see the clusters in a graph?
 # TODO: Add a way of checking the code runtime. Return the time data in the get request?
 # TODO: Add a spelling check algorithm for the company names so that it corrects typos to the corresponding company name. This will make it more user-friendly.
 # Returns the list of colors when the request body contains an url to the company logo.
