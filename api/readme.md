@@ -1,8 +1,10 @@
-# The API
+# pioDash: dcr-api
 This API provides endpoints that return RGB values of the dominant colours of an image.
+## Note
+Code contains a lot of comments. I suggest the [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) plugin voor vscode for proper readability.
 
 ## Sources
-
+_Sources I used for learning how to make this product_
 - [API - (stackoverflow) Best practices for structuring a fastAPI project](https://stackoverflow.com/questions/64943693/what-are-the-best-practices-for-structuring-a-fastapi-project)
 - [API - FastAPI docs](https://fastapi.tiangolo.com/)
 
