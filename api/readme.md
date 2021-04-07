@@ -1,5 +1,23 @@
 # pioDash: dcr-api
 This API provides endpoints that return RGB values of the dominant colours of an image.
+
+# How to use
+After copying the repo 
+
+run
+```terminal
+$ python -m pip install requirements.txt
+```
+To run its dependencies.
+
+After you finished installing the dependencies you can run
+```terminal
+hypercorn main:app --reload
+```
+
+To start the local server and inspect the API.
+
+
 ## Note
 Code contains a lot of comments. I suggest the [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) plugin voor vscode for proper readability.
 
