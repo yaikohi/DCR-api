@@ -8,14 +8,16 @@ run
 ```terminal
 $ python -m pip install requirements.txt
 ```
-To run its dependencies.
+in the terminal to run its dependencies.
 
 After you finished installing the dependencies you can run
 ```terminal
 hypercorn main:app --reload
 ```
+in the terminal to start the local server and inspect the API.
 
-To start the local server and inspect the API.
+Go to http://127.0.0.1:8000/docs to inspect the swagger docs of this api. Here you can try out the different endpoints the API provides.
+
 
 
 ## Note
