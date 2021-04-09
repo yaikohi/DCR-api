@@ -1,10 +1,3 @@
-import numpy as np
-from sklearn.cluster import KMeans
-import requests
-from PIL import Image
-import io
-
-
 # Comments @ get_dominant_colors-----------------------------
 # ! Function doesn't filter out the white background-color that most logos have.
 # TODO: Filter out the white color values before applying clustering.
@@ -21,6 +14,16 @@ import io
 # !: Clusters aren't sorted (=> colors aren't sorted.)
 # TODO: Sort the cluster centers before returning the list.
 # -----------------------------------------------------------
+
+
+import numpy as np
+from sklearn.cluster import KMeans
+import requests
+from PIL import Image
+import io
+
+import time
+
 
 def fetch_and_save_image(url: str) -> np.asarray:
     """
@@ -83,3 +86,14 @@ def get_dominant_color(url: str) -> list:
         rgb_hex_values.append((rgb_to_hex(RGB)))
     
     return rgb_hex_values
+
+
+# ! @ PEER REVIEWERS
+# ! uncomment the code below and run this file to see the results.
+
+# For testing the time it takes for the get_dominant_colors() function to run.
+# @ Reviewers, uncomment and run this file to see the results.
+# test_url = "http://dashboard-pio.herokuapp.com/companyLogos/Fynch.png"
+# start_time = time.time()
+# print(get_dominant_color(test_url))
+# print(f'time it took to run get_dominant_color in seconds: {time.time() - start_time}')
