@@ -10,9 +10,13 @@ $ python -m pip install requirements.txt
 ```
 in the terminal to run its dependencies.
 
-After you finished installing the dependencies you can run
+After you finished installing the dependencies should go to the api dir by using
 ```terminal
-hypercorn main:app --reload
+$ cd api
+```
+and then write 
+```terminal
+$ hypercorn main:app --reload
 ```
 in the terminal to start the local server and inspect the API.
 
