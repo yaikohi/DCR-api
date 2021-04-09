@@ -21,6 +21,7 @@ Go to http://127.0.0.1:8000/docs to inspect the swagger docs of this api. Here y
 ![Example](https://github.com/yaikohi/DCR-api/tree/Development/api/readme-images/howto1.gif)
 
 
+
 ## Note
 Code contains a lot of comments. I suggest the [Better comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) plugin voor vscode for proper readability.
 
