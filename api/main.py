@@ -68,18 +68,3 @@ async def return_logo_colors(company_name: str) -> list:
 
     company_logo_url = company_logos_dict[company_name]
     return get_dominant_color(company_logo_url)
-
-
-# -- legacy code -- 
-# // # Returns the list of colors when the request body contains an url to the company logo.
-# //@app.get("/{company_name}/colors", tags=["Logos"])
-# // async def return_logo_colors(company_name: str) -> list:    
-# //    for i in range(len(db)):
-# //        if company_name == db[i]['name']:
-# //            url_second_half = db[i]['logo']
-# //            url = str(url_first_half + url_second_half)
-# //            return get_dominant_color(url)
-# //        else: 
-# //            # ! Not safe. 
-# //            # TODO: Add error handler.
-# //            continue
