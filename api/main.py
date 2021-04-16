@@ -1,6 +1,5 @@
 from fastapi import FastAPI, HTTPException
 import requests 
-
 from dcr import get_dominant_color
 
 
