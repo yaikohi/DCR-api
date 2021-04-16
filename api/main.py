@@ -30,13 +30,6 @@ app = FastAPI(
 # TODO: Add a HTTP error handler for the GETrequest.
 db = requests.get("https://dashboard-pio.herokuapp.com/companies").json()['response']
 
-# !: Unoptimized code.
-# TODO: Refactor this code for a function that checks if the company exists in the database.
-# WHAT: This code (line 39 - line 47) creates a list of company names that exist in the database. 
-# If the company does not exist on this list the get endpoint @ {company_name}/colors will return an error.
-# @WHY: It currently works fine.
-# @ALTERNATIVES: Still learning about alternatives...
-
 # Dict that stores all the logo-urls of every company: {"company_name": "logo_url"}. // # Thanks Aswin :)
 company_logos_dict = {company['name']: f"https://dashboard-pio.herokuapp.com{company['logo']}" for company in db}
 
