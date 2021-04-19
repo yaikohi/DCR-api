@@ -29,3 +29,11 @@ Scaling dynos... !
  !    Couldn't find that process type (web).
 ```
 Solution: https://stackoverflow.com/a/53184918
+
+
+## Problem 3: 
+main.py is located in my /api folder.
+Solution:
+Add 'api.' in front of 'main:app' in the Procfile.
+("api.main:app")
+https://towardsdatascience.com/how-to-deploy-your-fastapi-app-on-heroku-for-free-8d4271a4ab9
