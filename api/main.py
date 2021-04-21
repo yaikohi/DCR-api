@@ -7,7 +7,7 @@ import os
 import asyncio
 
 # dcr-api modules
-from dcr import get_dominant_color
+from dcr import *
 from fetch_data import fetch_data
 
 # Loads the .env file
