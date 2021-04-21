@@ -21,7 +21,6 @@ from sklearn.cluster import KMeans
 import requests
 from PIL import Image
 import io
-
 import time
 
 
@@ -38,7 +37,7 @@ def fetch_and_save_image(url: str) -> np.asarray:
     PIL_IMG = Image.open(image_bytes)
     IMG = np.asarray(PIL_IMG)
 
-    return IMG 
+    return IMG
 
 
 def rgb_to_hex(rgb: tuple) -> str:
@@ -70,7 +69,7 @@ def get_dominant_color(url: str) -> list:
     IMAGE = IMAGE.reshape((height * width), channels)
 
     # Clustering the image
-    IMG_CLUSTER = KMeans(n_clusters = N_CLUSTERS).fit(IMAGE)
+    IMG_CLUSTER = KMeans(n_clusters=N_CLUSTERS).fit(IMAGE)
 
     # Contains the dominant colors of the image
     CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
@@ -80,11 +79,12 @@ def get_dominant_color(url: str) -> list:
 
     for i in range(N_CLUSTERS):
         # Determines the RGB value of every cluster
-        RGB = (round(CLUSTER_CENTERS[i][0]), round(CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
+        RGB = (round(CLUSTER_CENTERS[i][0]), round(
+            CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
 
         # Appends the RGB-turned Hex values to the rgb_hex_values list
         rgb_hex_values.append((rgb_to_hex(RGB)))
-    
+
     return rgb_hex_values
 
 
