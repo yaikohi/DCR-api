@@ -6,19 +6,17 @@ import time
 
 
 
-async def fetch(url):
+async def fetch_data(url: str):
+    """
+    Asynchronously fetches data from the dashboard-pio.herokuapp 
+    API. From the response it returns the data, the status code, 
+    and the header as a dict.
+    """
     async with aiohttp.ClientSession() as session:
-        response = await session.get(url)
-        result = await response.json()
-        return result
+        async with session.get(url) as response:
 
-async def main():
-    url = "https://dashboard-pio.herokuapp.com/companies"
+            print("Status:", response.status)
+            print("Content-type:", response.headers['content-type'])
 
-    print(await fetch(url))
-
-if __name__ == "__main__":
-    # * Older versions of Python would use:
-    # * asyncio.run(main())
-    # * Src: https://stackoverflow.com/questions/65682221/runtimeerror-exception-ignored-in-function-proactorbasepipetransport
-    asyncio.get_event_loop().run_until_complete(main())
+            data = await response.json()
+            return {"data": data['response'], "status": response.status, "headers": response.headers}
