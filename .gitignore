@@ -95,8 +95,5 @@ venv.bak/
 preprocessing/testing/readability/
 testing/
 testdata/
-
-# dcr
-# get_dominant_colors
-# preprocessing
+test.py
 api/file.log
