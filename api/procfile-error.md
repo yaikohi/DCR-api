@@ -37,3 +37,11 @@ Solution:
 Add 'api.' in front of 'main:app' in the Procfile.
 ("api.main:app")
 https://towardsdatascience.com/how-to-deploy-your-fastapi-app-on-heroku-for-free-8d4271a4ab9
+
+## Problem 4:
+How do I write a Procfile for fastapi?
+Solution: 
+```terminal
+web: hypercorn api.main:app --host=0.0.0.0 --port=${PORT:-5000}
+```
+src: https://github.com/tiangolo/fastapi/issues/802#issuecomment-574429540
