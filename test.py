@@ -24,31 +24,51 @@
 
 # asyncio.run(main())
 
+import asyncio
+import aiohttp
+import time
 
-# ? Learning story
+# ? From aiohttp docs: https://github.com/aio-libs/aiohttp
+
 async def fetch_data():
-    print(f'start fetch')
-    await asyncio.sleep(0.01)
+    url = "https://dashboard-pio.herokuapp.com/companies"
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
 
-    print(f'done fetching')
+            print("Status:", response.status)
+            print("Content-type:", response.headers['content-type'])
 
-async def print_nums():
-    print(f'start print nums')
-    for i in range(20):
-        print(f'num: {i}')
-        await asyncio.sleep(0.01)
+            data = await response.json()
+            print(data['response'])
+            return data['response']
 
-async def main():
-    start_time = time.time()
-
-
-    task1 = asyncio.create_task(fetch_data())
-    task2 = asyncio.create_task(print_nums())
-
-    value1 = await task1
-    print(value1)
-    await task2
-    print("It took %s seconds " % (time.time() - start_time))
+loop = asyncio.get_event_loop()
+loop.run_until_complete(fetch_data())
 
 
-asyncio.run(main())
+# # ? Learning story
+# async def fetch_data():
+#     print(f'start fetch')
+#     await asyncio.sleep(0.01)
+
+#     print(f'done fetching')
+
+# async def print_nums():
+#     print(f'start print nums')
+#     for i in range(20):
+#         print(f'num: {i}')
+#         await asyncio.sleep(0.01)
+
+# async def main():
+#     start_time = time.time()
+
+#     task1 = asyncio.create_task(fetch_data())
+#     task2 = asyncio.create_task(print_nums())
+
+#     value1 = await task1
+#     print(value1)
+#     await task2
+#     print("It took %s seconds " % (time.time() - start_time))
+
+
+# asyncio.run(main())

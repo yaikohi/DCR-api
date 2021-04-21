@@ -1,7 +1,21 @@
-from fastapi import FastAPI, HTTPException
-import requests 
-from dcr import get_dominant_color
+# Third party modules and libraries
+from fastapi import FastAPI, HTTPException 
+from dotenv import load_dotenv
 
+# Standard python modules
+import os
+import asyncio
+
+# dcr-api modules
+from dcr import get_dominant_color
+from fetch_data import fetch_data
+
+# Loads the .env file
+# Prevents exposing sensitive data 
+load_dotenv()
+
+# Gets the url from the .env file
+url = os.getenv('API_URL_DASHBOARDPIO')
 
 # Description for the docs page (visible at http://127.0.0.1:8000/docs ).
 tags_metadata = [
@@ -15,7 +29,6 @@ tags_metadata = [
     }
 ]
 
-
 # TODO: Write schemas for in- and output responses.
 app = FastAPI(
     title="DCR-api",
@@ -25,9 +38,11 @@ app = FastAPI(
 )
 
 # Fetches the data from the database and constructs a local memory cache for queries.
-# TODO: Double check the variable names for readability.
 # TODO: Add a HTTP error handler for the GETrequest.
-db = requests.get("https://dashboard-pio.herokuapp.com/companies").json()['response']
+loop = asyncio.get_event_loop()
+api_response = loop.run_until_complete(fetch_data(url))
+
+db = api_response["data"]
 
 # Dict that stores all the logo-urls of every company: {"company_name": "logo_url"}. // # Thanks Aswin :)
 company_logos_dict = {company['name']: f"https://dashboard-pio.herokuapp.com{company['logo']}" for company in db}
