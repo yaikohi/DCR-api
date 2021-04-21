@@ -1,13 +1,6 @@
 # # Asynchronous GETrequest to dashboard-pio.herokuapp
-# import aiohttp
-# import asyncio
-
-
-# async def fetch(url):
-#     async with aiohttp.ClientSession() as session:
-#         response = await session.get(url)
-#         result = await response.json()
-#         return result
+import aiohttp
+import asyncio
 
 async def fetch_data(url: str):
     """
