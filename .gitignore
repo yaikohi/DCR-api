@@ -2,8 +2,10 @@
 #________________________________________
 # src: https://github.com/github/gitignore/blob/master/Python.gitignore
 # Byte-compiled / optimized / DLL files
-preprocessing/__pycache__
-get_dominant_colors/__pycache__
+preprocessing
+get_dominant_colors
+testdata
+data
 *__pycache__
 api/__pycache__
 *.py[cod]
@@ -93,3 +95,5 @@ venv.bak/
 preprocessing/testing/readability/
 testing/
 testdata/
+test.py
+api/file.log

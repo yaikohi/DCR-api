@@ -5,7 +5,6 @@ __pycache__
 *.pyo
 *.pyd
 .Python
-env
 pip-log.txt
 pip-delete-this-directory.txt
 .tox
@@ -17,3 +16,12 @@ coverage.xml
 *,cover
 *.log
 .git
+
+venv
+readme.md
+api/readme-images
+testdata
+preprocessing
+get_dominant_colors
+data
+
