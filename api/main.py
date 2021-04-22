@@ -8,7 +8,9 @@ import asyncio
 
 # dcr-api modules
 from dcr import *
-from fetch_data import fetch_data
+from fetch_data import *
+
+
 
 # Loads the .env file
 # Prevents exposing sensitive data 
