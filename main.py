@@ -1,6 +1,7 @@
 # Third party modules and libraries
 from fastapi import FastAPI, HTTPException 
 from dotenv import load_dotenv
+import hypercorn
 
 # Standard python modules
 import os
@@ -38,6 +39,10 @@ app = FastAPI(
     version="0.1",
     openapi_tags=tags_metadata
 )
+
+if __name__ == "__main__":
+    hypercorn.run(app, host="0.0.0.0", port=8000)
+
 
 # Fetches the data from the database and constructs a local memory cache for queries.
 # TODO: Add a HTTP error handler for the GETrequest.
