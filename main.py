@@ -59,7 +59,7 @@ company_logos_dict = {company['name']: f"https://dashboard-pio.herokuapp.com{com
 
 # Returns the full database.
 @app.get("/", tags=["Companies"])
-async def get_logos():
+async def get_companies():
     return db
 
 
