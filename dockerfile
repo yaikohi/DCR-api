@@ -5,11 +5,10 @@
 
 FROM bynect/hypercorn-fastapi:python3.9-slim
 
-
 ENV ACCEPT_EULA=Y
 
 COPY . .
-WORKDIR /app
+WORKDIR /
 
 RUN apt-get --assume-yes update
 RUN python -m pip install --upgrade pip
