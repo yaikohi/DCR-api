@@ -1,1 +1,1 @@
-web: hypercorn api.main:app
+web: hypercorn main:app

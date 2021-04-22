@@ -7,8 +7,8 @@ import os
 import asyncio
 
 # dcr-api modules
-from dcr import *
-from fetch_data import *
+from services.dcr import *
+from services.fetch_data import *
 
 
 
