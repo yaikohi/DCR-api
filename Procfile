@@ -1,1 +1,1 @@
-web: hypercorn main:app
+web: hypercorn --bind 127.0.0.1:80 main:app

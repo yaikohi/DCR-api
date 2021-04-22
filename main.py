@@ -2,6 +2,7 @@
 from fastapi import FastAPI, HTTPException 
 from dotenv import load_dotenv
 import hypercorn
+from hypercorn.config import Config
 
 # Standard python modules
 import os
@@ -12,6 +13,8 @@ from services.dcr import *
 from services.fetch_data import *
 
 
+PORT = os.environ.get('port', 8000)
+API_URL_DASHBOARDPIO = os.environ.get('API_URL_DASHBOARDPIO')
 
 # Loads the .env file
 # Prevents exposing sensitive data 
@@ -41,7 +44,7 @@ app = FastAPI(
 )
 
 if __name__ == "__main__":
-    hypercorn.run(app, host="0.0.0.0", port=8000)
+    hypercorn.run(app, host="dcr-api000", port=port)
 
 
 # Fetches the data from the database and constructs a local memory cache for queries.
