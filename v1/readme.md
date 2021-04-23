@@ -4,7 +4,7 @@ This API provides endpoints that return RGB values of the dominant colours of an
 # It's still a work in progress!
 
 -----------------------------------------------
-# How to use
+# How to use ! **OUTDATED**
 After copying the repo 
 
 run
