@@ -9,7 +9,7 @@ import os
 import asyncio
 
 # dcr-api modules
-from services.dcr import *
+from services.dcr import get_dominant_colors
 from services.fetch_data import *
 
 
@@ -91,4 +91,4 @@ async def get_logo_colors(company_name: str) -> list:
         detail="404: Company not found. Mind case-sensitivity and use of spaces.")
 
     company_logo_url = company_logos_dict[company_name]
-    return get_dominant_color(company_logo_url)
+    return get_dominant_colors(company_logo_url)
