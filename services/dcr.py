@@ -44,27 +44,31 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
     IMAGE = fetch_and_save_image(url)
     height, width, channels = IMAGE.shape
 
-    # #  Checks if the image has color values
-    assert channels == 3
+    #  Checks if the image has color values
+    try: 
+        assert channels == 3
+        # Reshaping the image array for the KMeans algorithm
+        
+        IMAGE = IMAGE.reshape((height * width), channels)
 
-    # Reshaping the image array for the KMeans algorithm
-    IMAGE = IMAGE.reshape((height * width), channels)
+        # Clustering the image
+        IMG_CLUSTER = KMeans(n_clusters=N_CLUSTERS).fit(IMAGE)
 
-    # Clustering the image
-    IMG_CLUSTER = KMeans(n_clusters=N_CLUSTERS).fit(IMAGE)
+        # Contains the dominant colors of the image
+        CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
 
-    # Contains the dominant colors of the image
-    CLUSTER_CENTERS = IMG_CLUSTER.cluster_centers_
+        # An empty list in which the color values will be put into.
+        rgb_hex_values = []
 
-    # An empty list in which the color values will be put into.
-    rgb_hex_values = []
+        for i in range(N_CLUSTERS):
+            # Determines the RGB value of every cluster
+            RGB = (round(CLUSTER_CENTERS[i][0]), round(
+                CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
 
-    for i in range(N_CLUSTERS):
-        # Determines the RGB value of every cluster
-        RGB = (round(CLUSTER_CENTERS[i][0]), round(
-            CLUSTER_CENTERS[i][1]), round(CLUSTER_CENTERS[i][2]))
+            # Appends the RGB-turned Hex values to the rgb_hex_values list
+            rgb_hex_values.append((rgb_to_hex(RGB)))
 
-        # Appends the RGB-turned Hex values to the rgb_hex_values list
-        rgb_hex_values.append((rgb_to_hex(RGB)))
-
-    return rgb_hex_values
+        return rgb_hex_values
+    
+    except AssertionError as msg:
+        return f"The image does not have any color values. Error message: f'{msg}'"
