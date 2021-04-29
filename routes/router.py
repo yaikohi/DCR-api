@@ -42,6 +42,8 @@ async def get_colors(url: str) -> list:
 url_base = "https://dashboard-pio.herokuapp.com"
 response = asyncio.get_event_loop().run_until_complete(fetch_data(url="https://dashboard-pio.herokuapp.com/companies"))
 db = response['data']
+asyncio.get_event_loop().close()
+
 
 @router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
 async def get_colors_of_a_company(company_id: str) -> list: 
@@ -107,5 +109,3 @@ async def get_piodash_company_ids():
         piodash_id_dict[f'{company_name}'] = company_id
 
     return piodash_id_dict
-
-asyncio.get_event_loop().close()
