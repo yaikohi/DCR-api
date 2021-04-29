@@ -45,7 +45,7 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
     height, width, channels = IMAGE.shape
 
     # #  Checks if the image has color values
-    # assert channels == 3
+    assert channels == 3
 
     # Reshaping the image array for the KMeans algorithm
     IMAGE = IMAGE.reshape((height * width), channels)
