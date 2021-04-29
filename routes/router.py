@@ -69,9 +69,11 @@ async def get_colors_of_a_company() -> dict:
     
     for i in range(len(db)):
         company_name = db[i]['name']
-        
-        url = url_base + db[i]['logo']
-        company_colors = get_dominant_colors(url)
+        company_logo_url = url_base + db[i]['logo']
+        try:
+            company_colors = get_dominant_colors(company_logo_url)
+        except:
+            company_colors = f"Function 'get_dominant_colors' malfunctioned. Why tho"
         
         piodash_color_dict[f'{company_name}'] = company_colors
     return piodash_color_dict
