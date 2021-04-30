@@ -6,23 +6,6 @@ import io
 import time
 
 
-def fetch_and_save_image(url: str) -> np.asarray:
-    # ? Why was this necessary again ?
-    """
-    Fetches the image from the url
-    Loads the image as a CV2 Image object
-    Returns a cv2.Image object
-    """
-
-    response = requests.get(url)
-    image_bytes = io.BytesIO(response.content)
-
-    PIL_IMG = Image.open(image_bytes)
-    IMG = np.asarray(PIL_IMG)
-
-    return IMG
-
-
 def rgb_to_hex(rgb: tuple) -> str:
     """
     Accepts a tuple of RGB values (R: int, G: int, B: int)
@@ -31,6 +14,23 @@ def rgb_to_hex(rgb: tuple) -> str:
     """
 
     return '%02x%02x%02x' % rgb
+
+
+def fetch_and_save_image(url: str) -> np.asarray:
+    # ? Why was this necessary again ?
+    """
+    Fetches the image from the url
+    Loads the image as a CV2 Image object
+    Returns a cv2.Image object
+    """
+    response = requests.get(url, stream=True)
+
+    if response.status_code == 200:
+        pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
+        img = np.asarray(pil_img)
+        return img
+    else:
+        return f"Couldn't retrieve the image. Status code: {response.status_code}"
 
 
 def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
@@ -42,6 +42,7 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
 
     # Fetches image from url and saves it as a cv2 image object
     IMAGE = fetch_and_save_image(url)
+
     height, width, channels = IMAGE.shape
 
     #  Checks if the image has color values
@@ -67,8 +68,23 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
 
             # Appends the RGB-turned Hex values to the rgb_hex_values list
             rgb_hex_values.append((rgb_to_hex(RGB)))
+        
+        # The amount of has not been automatically determined 
+        # this filters out any double color values.
+        colors = []
+        for color in rgb_hex_values:
+            if color not in colors:
+                colors.append(color)
 
-        return rgb_hex_values
+        return colors
     
     except AssertionError as msg:
-        return f"The image does not have any color values. Error message: f'{msg}'"
+        return f"The image does not have any color values."
+
+
+if __name__ == "__main__":
+    url = "http://dashboard-pio.herokuapp.com/companyLogos/Centric.png"
+    url2 = "http://dashboard-pio.herokuapp.com/companyLogos/Quintor.jpg"
+
+    print(get_dominant_colors(url))
+    print(get_dominant_colors(url2))
