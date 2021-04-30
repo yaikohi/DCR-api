@@ -1,11 +1,13 @@
 from fastapi import APIRouter
 import asyncio
+
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
 
+
 router = APIRouter()
 
-# PIODASH IMAGES
+
 # Necessary for fetching the logo-images from the other api.
 url_base = "https://dashboard-pio.herokuapp.com"
 response = asyncio.get_event_loop().run_until_complete(fetch_data(url="https://dashboard-pio.herokuapp.com/companies"))
