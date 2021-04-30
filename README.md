@@ -1,13 +1,12 @@
-# WORK IN PROGRESS !
+# DCR-api v2
 ## DCR: Dominant color recognition.
 
-A program that generates dominant colors of an image and returns the rgb values in hex.
-It's also possible to generate color swatches based on an input image.
+A program that generates dominant colors of an image and returns the rgb colors in hexadecimal values.
 
 The colours are generated using KMeans clustering.
+The api was written with FastAPI.
 
-The api was written with FastAPI (py library).
-To use this api I recommend using vscode and creating a venv.
+To use this api I recommend using vscode and creating a new virtual environment.
 To create a venv use
 ```terminal
 python -m venv venv
