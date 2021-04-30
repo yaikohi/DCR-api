@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 
 import asyncio
-import markdown as md
+# import markdown as md
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
 
