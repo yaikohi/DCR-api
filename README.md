@@ -20,11 +20,4 @@ python -m pip install requirements.txt
 $ cd api
 hypercorn main:app --reload
 ```
-You can now go to http://127.0.0.1:8000/docs to see the docs.
-or navigate to the other endpoints:
-
-https://127.0.0.1:8000/{company_name}/colors
-https://127.0.0.1:8000/{company_name}/
-https://127.0.0.1:8000/
-
-where company_name can be any of the company names found in the https://127.0.0.1:8000/ endpoint.
+You can now go to http://127.0.0.1:8000/docs to see the docs and test the various endpoints.
