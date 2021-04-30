@@ -2,6 +2,7 @@
 import aiohttp
 import asyncio
 
+
 async def fetch_data(url: str):
     """
     Asynchronously fetches data from the dashboard-pio.herokuapp 

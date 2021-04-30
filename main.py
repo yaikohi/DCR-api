@@ -1,5 +1,3 @@
-# Testing
-
 from fastapi import FastAPI
 
 from core.config import (APP_NAME, APP_VERSION, API_KEY, API_PREFIX, IS_DEBUG)
