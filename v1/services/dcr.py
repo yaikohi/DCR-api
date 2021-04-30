@@ -80,3 +80,11 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
     
     except AssertionError as msg:
         return f"The image does not have any color values."
+
+
+if __name__ == "__main__":
+    url = "http://dashboard-pio.herokuapp.com/companyLogos/Centric.png"
+    url2 = "http://dashboard-pio.herokuapp.com/companyLogos/Quintor.jpg"
+
+    print(get_dominant_colors(url))
+    print(get_dominant_colors(url2))
