@@ -1,4 +1,4 @@
-# pioDash: dcr-api
+# pioDash: dcr-api v0.0.1
 This API provides endpoints that return RGB values of the dominant colours of an image.
 
 # It's still a work in progress!

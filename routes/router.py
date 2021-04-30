@@ -1,56 +1,29 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
+from fastapi.responses import HTMLResponse
 import asyncio
-from services.dcr import get_dominant_colors
-from services.fetch_data import fetch_data
+from routes import piodash
 
 router = APIRouter()
 
+router.include_router(piodash.router)
+router.include_router(images.router)
 
-# IMAGES
-@router.get("/colors/{img_url}", tags=["colors"])
-async def get_colors(img_url: str) -> list:
-    colors = get_dominant_colors(img_url)
-    return colors
-    
-@router.get("/colors/", tags=["colors"])
-async def get_colors(url: str) -> list:
-    return get_dominant_colors(url)
+# * Optional todos:
+# TODO: 1. Learn jinja2. 
+# TODO: 2. Add a new endpoint for a readme.md file.
+# import markdown as md
+# from fastapi.templating import Jinja2Templates
 
 
-# PIODASH IMAGES
-# Necessary for fetching the logo-images from the other api.
-url_base = "https://dashboard-pio.herokuapp.com"
-response = asyncio.get_event_loop().run_until_complete(fetch_data(url="https://dashboard-pio.herokuapp.com/companies"))
-db = response['data']
-
-@router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
-async def get_colors_of_a_company(company_id: str) -> list:
-    colors_list = []
-    test = []
-    # Loops over all the companies in the database
-    for i in range(len(db)):
-        # and checks for matches with the company_id
-    #     while company_id != db[i]['id']:
-    #         try:
-    #             return f'Loading...'
-    #         except company_id == db[i]['id']:
-    #             colors_list.append(db[i]['id'])
-    # return colors_list
-
-
-
-@router.get("/piodash/", tags=["piodash-colors"])
-async def get_piodash_db() -> dict:
-    return db
-
-
-@router.get("/piodash/ids/", tags=["piodash-colors"])
-async def get_piodash_company_ids():
-    id_list = []
-    for i in range(len(db)):
-        id_list.append(db[i]['id'])
-    
-    return id_list
-
-
-asyncio.get_event_loop().close()
+# templates = Jinja2Templates(directory="docs")
+# # /API
+# @router.get("/", tags=["readme"], response_class=HTMLResponse)
+# async def show_readme(request: Request):
+#     with open("./docs/README.md", "r", encoding="utf-8") as input_file:
+#         text = input_file.read()
+#     html = md.markdown(text)
+#     data = {
+#         "title": "Readme",
+#         "text": html
+#     }
+#     return templates.TemplateResponse("page.html", {"request": request, "data": data})
