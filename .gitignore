@@ -96,4 +96,5 @@ preprocessing/testing/readability/
 testing/
 testdata/
 test.py
+tests
 api/file.log

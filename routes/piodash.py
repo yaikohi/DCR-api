@@ -1,8 +1,8 @@
 from fastapi import APIRouter
-import asyncio
+# import asyncio
 
 from services.dcr import get_dominant_colors
-from services.fetch_data import fetch_data
+from services.fetch_data import fetch_data_async, fetch_data
 
 
 router = APIRouter()
@@ -10,10 +10,14 @@ router = APIRouter()
 
 # Necessary for fetching the logo-images from the other api.
 url_base = "https://dashboard-pio.herokuapp.com"
-response = asyncio.get_event_loop().run_until_complete(fetch_data(url="https://dashboard-pio.herokuapp.com/companies"))
-db = response['data']
-asyncio.get_event_loop().close()
+url = "https://dashboard-pio.herokuapp.com/companies"
 
+# Async fetch
+# response = asyncio.get_event_loop().run_until_complete(fetch_data_async(url))
+# async_db = response['data']
+
+# Sync fetch
+db = fetch_data(url)['data']['response']
 
 @router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
 async def get_colors_of_a_company(company_id: str) -> list: 
