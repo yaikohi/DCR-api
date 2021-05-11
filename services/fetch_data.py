@@ -1,9 +1,21 @@
 # Asynchronous GETrequest to dashboard-pio.herokuapp/companies
 import aiohttp
 import asyncio
+import requests
 
+def fetch_data(url: str) -> dict:
+    """
+    Fetches data from an url.
 
-async def fetch_data(url: str):
+    input: url string
+    output: dict containing data, headers, statuscode
+    """
+    response = requests.get(url)
+    data = response.json()
+
+    return {"data": data, "headers": response.headers, "statuscode": response.status_code}
+
+async def fetch_data_async(url: str) -> dict:
     """
     Asynchronously fetches data from the dashboard-pio.herokuapp 
     API. From the response it returns the data, the status code, 
