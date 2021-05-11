@@ -26,9 +26,14 @@ def fetch_and_save_image(url: str) -> np.asarray:
     response = requests.get(url, stream=True)
 
     if response.status_code == 200:
-        pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
-        img = np.asarray(pil_img)
-        return img
+        try:
+            pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
+            # resized_img = pil_img.thumbnail((10,10))
+            pil_img.thumbnail((500,500))
+            img = np.asarray(pil_img)
+            return img
+        except:
+            print('Could not load the image from the provided URL.')
     else:
         return f"Couldn't retrieve the image. Status code: {response.status_code}"
 
