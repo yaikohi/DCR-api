@@ -45,7 +45,7 @@ async def get_colors_of_a_company() -> dict:
         try:
             company_colors = get_dominant_colors(company_logo_url)
         except:
-            company_colors = f"Function 'get_dominant_colors' malfunctioned. Why tho"
+            company_colors = f"Function 'get_dominant_colors' returned an error."
         
         piodash_color_dict[f'{company_name}'] = company_colors
     return piodash_color_dict
