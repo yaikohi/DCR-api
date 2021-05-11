@@ -28,7 +28,6 @@ def fetch_and_save_image(url: str) -> np.asarray:
     if response.status_code == 200:
         try:
             pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
-            # resized_img = pil_img.thumbnail((10,10))
             pil_img.thumbnail((500,500))
             img = np.asarray(pil_img)
             return img
