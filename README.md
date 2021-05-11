@@ -20,4 +20,4 @@ python -m pip install requirements.txt
 $ cd api
 hypercorn main:app --reload
 ```
-You can now go to http://127.0.0.1:8000/docs to see the docs and test the various endpoints.
+You can now go to http://127.0.0.1:8000/api/docs to see the docs and test the various endpoints.
