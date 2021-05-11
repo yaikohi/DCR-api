@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from services.dcr import get_dominant_colors
-from services.fetch_data import fetch_data_async, fetch_data
+from services.fetch_data import fetch_data
 
 
 router = APIRouter()
