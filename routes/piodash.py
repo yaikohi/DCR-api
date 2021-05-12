@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+from concurrent.futures import ThreadPoolExecutor
 
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
@@ -13,7 +14,6 @@ url = "https://dashboard-pio.herokuapp.com/companies"
 
 # Sync fetch
 db = fetch_data(url)['data']['response']
-
 
 @router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
 async def get_colors_of_a_company(company_id: str) -> list:
@@ -37,18 +37,20 @@ async def get_colors_of_companies() -> dict:
     """
     Returns color values of all the company logos in the piodash database.
     """
-    piodash_color_dict = {}
+    piodash_colors = {}
 
-    for i in range(len(db)):
-        company_name = db[i]['name']
-        company_logo_url = url_base + db[i]['logo']
-        try:
-            company_colors = get_dominant_colors(company_logo_url)
-        except:
-            company_colors = f"Function 'get_dominant_colors' returned an error."
+    with ThreadPoolExecutor(max_workers=40) as executor:
+        for i in range(len(db)):
+            company_name = db[i]['name']
+            company_logo_url = url_base + db[i]['logo']
 
-        piodash_color_dict[f'{company_name}'] = company_colors
-    return piodash_color_dict
+            try:
+                company_colors = executor.submit(get_dominant_colors, company_logo_url).result(timeout=29)
+                piodash_colors[f'{company_name}'] = company_colors
+            except Exception:
+                piodash_colors[f'{company_name}'] = []
+                print(Exception)
+    return piodash_colors
 
 
 @router.get("/piodash/ids/", tags=["piodash-colors"])
