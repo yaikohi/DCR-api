@@ -20,11 +20,9 @@ async def get_colors_of_a_company(company_id: str) -> list:
     """
     Returns color values of a single company logo.
     """
-    if company_id not in db:
-        raise HTTPException(status_code=400, detail="ID not found.")
-    
+
     for i in range(len(db)):
-        if company_id in db[i]['id']:
+        if company_id == db[i]['id']:
             url = url_base + db[i]['logo']
             colors = get_dominant_colors(url)
             return colors
