@@ -2,6 +2,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 import requests
 from PIL import Image
+
 import io
 import time
 
@@ -15,13 +16,24 @@ def rgb_to_hex(rgb: tuple) -> str:
 
     return '%02x%02x%02x' % rgb
 
-
-def fetch_and_save_image(url: str) -> np.asarray:
-    # ? Why was this necessary again ?
+def read_img(f) -> np.asarray:
     """
-    Fetches the image from the url
-    Loads the image as a CV2 Image object
-    Returns a cv2.Image object
+    Reads a file and returns a np.asarray.
+    input: image file
+    output: np.asarray
+    """
+    with Image.open(f) as img:
+        img.convert("RGB")
+        img.thumbnail((300,300))
+    return np.asarray(img)
+
+
+def fetch_and_read_image(url: str) -> np.asarray:
+    """
+    Required for extracting an image from a request object.
+
+    input: url string
+    output: np.asarray containing the rgb values of every pixel of the image.
     """
     response = requests.get(url, stream=True)
 
@@ -45,7 +57,7 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
     """
 
     # Fetches image from url and saves it as a cv2 image object
-    IMAGE = fetch_and_save_image(url)
+    IMAGE = fetch_and_read_image(url)
 
     height, width, channels = IMAGE.shape
 
