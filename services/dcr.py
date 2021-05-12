@@ -40,7 +40,7 @@ def fetch_and_read_image(url: str) -> np.asarray:
     if response.status_code == 200:
         try:
             pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
-            pil_img.thumbnail((500,500))
+            pil_img.thumbnail((200,200))
             img = np.asarray(pil_img)
             return img
         except:
