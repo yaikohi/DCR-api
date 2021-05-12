@@ -91,6 +91,7 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
         for color in rgb_hex_values:
             if color not in colors:
                 colors.append(color)
+        colors.sort()
 
         return colors
     
