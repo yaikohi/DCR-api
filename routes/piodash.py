@@ -15,19 +15,22 @@ url = "https://dashboard-pio.herokuapp.com/companies"
 # Sync fetch
 db = fetch_data(url)['data']['response']
 
+
 @router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
 async def get_colors_of_a_company(company_id: str) -> list:
     """
     Returns color values of a single company logo.
     """
-
-    for i in range(len(db)):
-        if company_id == db[i]['id']:
-            url = url_base + db[i]['logo']
+    # TODO remove logic from this file.
+    # TODO write unittests 
+    # ! Bug: Invalid ID's can still return 'colors'.
+    for index, company in enumerate(db):
+        if company_id in company['id']:
+            url = url_base + db[index]['logo']
             colors = get_dominant_colors(url)
             return colors
         else:
-            continue
+            "Invalid 'company_id'."
 
 
 @router.get("/piodash-colors/", tags=["piodash-colors"])
@@ -43,7 +46,8 @@ async def get_colors_of_companies() -> dict:
             company_logo_url = url_base + db[i]['logo']
 
             try:
-                company_colors = executor.submit(get_dominant_colors, company_logo_url).result(timeout=29)
+                company_colors = executor.submit(
+                    get_dominant_colors, company_logo_url).result(timeout=29)
                 piodash_colors[f'{company_name}'] = company_colors
             except Exception:
                 piodash_colors[f'{company_name}'] = []
