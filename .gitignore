@@ -98,3 +98,4 @@ testdata/
 test.py
 tests
 api/file.log
+.vscode
