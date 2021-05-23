@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from concurrent.futures import ThreadPoolExecutor
 
 from services.dcr import get_dominant_colors

@@ -5,6 +5,7 @@ from PIL import Image
 
 import io
 
+
 def rgb_to_hex(rgb: tuple) -> str:
     """
     Accepts a tuple of RGB values (R: int, G: int, B: int)
@@ -14,6 +15,7 @@ def rgb_to_hex(rgb: tuple) -> str:
 
     return '%02x%02x%02x' % rgb
 
+
 def read_img(f) -> np.asarray:
     """
     Reads a file and returns a np.asarray.
@@ -22,7 +24,7 @@ def read_img(f) -> np.asarray:
     """
     with Image.open(f) as img:
         img.convert("RGB")
-        img.thumbnail((300,300))
+        img.thumbnail((300, 300))
     return np.asarray(img)
 
 
@@ -38,7 +40,7 @@ def fetch_and_read_image(url: str) -> np.asarray:
     if response.status_code == 200:
         try:
             pil_img = Image.open(io.BytesIO(response.content)).convert("RGB")
-            pil_img.thumbnail((200,200))
+            pil_img.thumbnail((200, 200))
             img = np.asarray(pil_img)
             return img
         except:
@@ -60,10 +62,10 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
     height, width, channels = IMAGE.shape
 
     #  Checks if the image has color values
-    try: 
+    try:
         assert channels == 3
         # Reshaping the image array for the KMeans algorithm
-        
+
         IMAGE = IMAGE.reshape((height * width), channels)
 
         # Clustering the image
@@ -82,9 +84,7 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
 
             # Appends the RGB-turned Hex values to the rgb_hex_values list
             rgb_hex_values.append((rgb_to_hex(RGB)))
-        
-        # The amount of has not been automatically determined 
-        # this filters out any double color values.
+
         colors = []
         for color in rgb_hex_values:
             if color not in colors:
@@ -92,6 +92,6 @@ def get_dominant_colors(url: str, N_CLUSTERS=3) -> list:
         colors.sort()
 
         return colors
-    
+
     except AssertionError as msg:
         return f"The image does not have any color values."

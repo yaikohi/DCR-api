@@ -3,6 +3,7 @@ import aiohttp
 import asyncio
 import requests
 
+
 def fetch_data(url: str) -> dict:
     """
     Fetches data from an url.
@@ -14,6 +15,7 @@ def fetch_data(url: str) -> dict:
     data = response.json()
 
     return {"data": data, "headers": response.headers, "statuscode": response.status_code}
+
 
 async def fetch_data_async(url: str) -> dict:
     """
@@ -28,4 +30,5 @@ async def fetch_data_async(url: str) -> dict:
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(fetch_data(url="https://dashboard-pio.herokuapp.com/companies"))
+    asyncio.get_event_loop().run_until_complete(fetch_data(
+        url="https://dashboard-pio.herokuapp.com/companies"))
