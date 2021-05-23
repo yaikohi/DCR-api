@@ -4,8 +4,6 @@ import requests
 from PIL import Image
 
 import io
-import time
-
 
 def rgb_to_hex(rgb: tuple) -> str:
     """
