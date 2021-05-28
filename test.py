@@ -1,6 +1,7 @@
 import sys
 
 print(sys.modules)
-import dcr
+from services.dcr import *
+
 for module in sys.modules:
     print(module)
