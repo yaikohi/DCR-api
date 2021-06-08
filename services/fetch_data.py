@@ -1,6 +1,5 @@
 # Asynchronous GETrequest to dashboard-pio.herokuapp/companies
 import aiohttp
-import asyncio
 import requests
 
 
@@ -29,6 +28,6 @@ async def fetch_data_async(url: str) -> dict:
             return {"data": data['response'], "status": response.status, "headers": response.headers}
 
 
-if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(fetch_data(
-        url="https://dashboard-pio.herokuapp.com/companies"))
+# if __name__ == "__main__":
+#     asyncio.get_event_loop().run_until_complete(fetch_data(
+#         url="https://dashboard-pio.herokuapp.com/companies"))
