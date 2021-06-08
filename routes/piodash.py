@@ -4,8 +4,6 @@ from concurrent.futures import ThreadPoolExecutor
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
 
-import logging
-
 router = APIRouter()
 
 
@@ -23,8 +21,6 @@ async def get_colors_of_a_company(company_id: str) -> list:
     Returns color values of a single company logo.
     """
     # TODO remove logic from this file.
-    # TODO write unittests 
-    # ! Bug: Invalid ID's can still return 'colors'.
     for company in db:
         if company_id == company['id']:
             url = url_base + company['logo']
