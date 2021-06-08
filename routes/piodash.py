@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
 
+import logging
 
 router = APIRouter()
 
@@ -14,7 +15,7 @@ url = "https://dashboard-pio.herokuapp.com/companies"
 
 # Sync fetch
 db = fetch_data(url)['data']['response']
-
+id_set = []
 
 @router.get("/piodash-colors/{company_id}", tags=["piodash-colors"])
 async def get_colors_of_a_company(company_id: str) -> list:
@@ -24,13 +25,13 @@ async def get_colors_of_a_company(company_id: str) -> list:
     # TODO remove logic from this file.
     # TODO write unittests 
     # ! Bug: Invalid ID's can still return 'colors'.
-    for index, company in enumerate(db):
-        if company_id in company['id']:
-            url = url_base + db[index]['logo']
+    for company in db:
+        if company_id == company['id']:
+            url = url_base + company['logo']
             colors = get_dominant_colors(url)
             return colors
-        else:
-            "Invalid 'company_id'."
+    return "Invalid 'company_id'."
+
 
 
 @router.get("/piodash-colors/", tags=["piodash-colors"])
