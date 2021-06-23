@@ -1,4 +1,3 @@
-from logging import NullHandler, error
 import unittest
 from services.dcr import get_dominant_colors
 

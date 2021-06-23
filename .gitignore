@@ -4,8 +4,6 @@
 # Byte-compiled / optimized / DLL files
 preprocessing
 get_dominant_colors
-testdata
-data
 *__pycache__
 api/__pycache__
 *.py[cod]
@@ -91,11 +89,9 @@ venv.bak/
 # docker
 .devcontainer
 
-# testing
-preprocessing/testing/readability/
-testing/
-testdata/
-test.py
-tests
-api/file.log
 .vscode
+.pytest_cache
+docs
+classes.py
+tests/multithreading_example.py
+tests/multiprocessing_example.py

@@ -20,8 +20,10 @@ coverage.xml
 venv
 readme.md
 api/readme-images
-testdata
 preprocessing
 get_dominant_colors
-data
-
+.pytest_cache
+docs
+classes.py
+multithreading_example.py
+multiprocessing_example.py
