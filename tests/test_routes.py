@@ -1,7 +1,6 @@
 from concurrent.futures.thread import ThreadPoolExecutor
-from fastapi import APIRouter, HTTPException
-import asyncio
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from fastapi import APIRouter
+from concurrent.futures import ThreadPoolExecutor
 
 from services.dcr import get_dominant_colors
 from services.fetch_data import fetch_data
@@ -22,25 +21,10 @@ piodash_logo_urls = []
 piodash_names = []
 
 
-# with ThreadPoolExecutor(max_workers=40) as executor:
-#     for i in range(len(db)):
-#             company_name = db[i]['name']
-#             company_logo_url = url_base + db[i]['logo']
-
-#             company_colors = executor.submit(get_dominant_colors, company_logo_url, timeout=29)
-#             piodash_colors[f'{company_name}'] = company_colors
-#             piodash_logo_urls.append(company_logo_url)
-#             piodash_names.append(company_name)
-
-
 def get_all_colors(dataB):
     """
     Creates a thread pool and extracts all the colors from the urls.
     """
-
-    futures_list = []
-    results = []
-
 
     with ThreadPoolExecutor(max_workers=40) as executor:
         for i in range(len(dataB)):
