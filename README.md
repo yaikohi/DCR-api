@@ -1,4 +1,5 @@
-# (SCHOOL PROJECT) DCR-api v2
+# DCR-api v2
+#### *(SCHOOL PROJECT)* 
 ## DCR: Dominant color recognition.
 
 A program that generates dominant colors of an image and returns the rgb colors in hexadecimal values.
